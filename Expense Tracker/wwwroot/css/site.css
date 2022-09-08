@@ -1,11 +1,11 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 html {
@@ -19,9 +19,9 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
-  background-color: #12161d;
-  color: #fff;
+    margin-bottom: 60px;
+    background-color: #12161d;
+    color: #fff;
 }
 
 .e-bigger {
@@ -39,6 +39,12 @@ body {
     text-decoration: none;
     color: inherit;
 }
+
+    .no-a-decoration:hover {
+        text-decoration: none;
+        color: #110f0f;
+    }
+
 
 /*Grid*/
 .e-grid {
@@ -114,12 +120,12 @@ body {
 
 /*Radio button Group*/
 .e-btn-group.custom-rbt-group {
-    width: 100%; 
+    width: 100%;
 }
 
-.e-btn-group.custom-rbt-group .e-btn {
-    width: 50%;
-}
+    .e-btn-group.custom-rbt-group .e-btn {
+        width: 50%;
+    }
 
 .custom-rbt-group label.e-btn {
     box-shadow: none !important;
