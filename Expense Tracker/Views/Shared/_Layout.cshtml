@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Expense Tracker</title>
+    <title>@ViewData["PageTitle"] - Expense Tracker</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.syncfusion.com/ej2/20.2.43/bootstrap5-dark.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -17,19 +17,36 @@
 <body class="e-bigger">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Expense Tracker</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
 
 
-    <div class="container mt-5">
+    <div class="container mt-4">
         <div class="row justify-content-center">
             <div class="@(ViewData["isDashboard"] == null?"col-md-10":"col-md-12")">
                 <main role="main" class="pb-3">
                     @if (ViewData["isDashboard"] == null)
                     {
                         <div class="row">
-                            <div class="col-md-7">
-                                <div class="d-flex flex-column mb-5">
+                            <div class="col-md-6">
+                                <div class="d-flex flex-column mb-3">
                                     <div class="d-flex mb-1">
                                         <div class="flex-grow-1">
                                             <h3 class="fw-bold">@ViewData["PageTitle"]</h3>
@@ -55,10 +72,8 @@
         </div>
     </div>
 
-    @*<footer class="border-top footer text-muted">
-    <div class="container">
-    &copy; 2022 - Expense_Tracker - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-    </div>
+    @*<footer class="footer mt-auto py-3" style="position:absolute;bottom:0">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 280"><path fill="#273034" fill-opacity="0.9" d="M0,224L65.5,288L130.9,192L196.4,288L261.8,224L327.3,256L392.7,256L458.2,160L523.6,64L589.1,128L654.5,256L720,256L785.5,128L850.9,32L916.4,160L981.8,224L1047.3,32L1112.7,96L1178.2,256L1243.6,224L1309.1,0L1374.5,192L1440,192L1440,320L1374.5,320L1309.1,320L1243.6,320L1178.2,320L1112.7,320L1047.3,320L981.8,320L916.4,320L850.9,320L785.5,320L720,320L654.5,320L589.1,320L523.6,320L458.2,320L392.7,320L327.3,320L261.8,320L196.4,320L130.9,320L65.5,320L0,320Z"></path></svg>    
     </footer>*@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

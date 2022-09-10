@@ -7,8 +7,9 @@
 }
 
 
-<div class="row">
+<div class="row ">
     <div class="col-md-7">
+
         <ejs-grid id="categories" dataSource="@Model" gridLines="None"
                   allowSorting="true" allowPaging="true">
             <e-grid-pagesettings pageSize="5"></e-grid-pagesettings>
@@ -40,7 +41,7 @@
             <i class="fa-solid fa-pen fa-lg"></i>
         </a>
         <form action="/Category/Delete/${CategoryId}" method="post">
-            @Html.AntiForgeryToken()
+    @Html.AntiForgeryToken()
             <button type="submit" class="btn btn-sm btn-link no-a-decoration"
             onclick="return confirm(&quot;Are sure to delete this record?&quot;)">
                 <i class="fa-solid fa-trash-can fa-lg text-danger"></i>
@@ -50,13 +51,13 @@
 </script>
 
 <script>
-  document.querySelector('#confirmDelete').addEventListener('click', () => {
-    Confirm.open({
-      title: 'Confirm Delete',
-      message: 'Are you sure you want to delete this category?',
-      onok: () => {
-          document.forms[0].submit();
-      }
-    })
-  });
+    document.querySelector('#confirmDelete').addEventListener('click', () => {
+        Confirm.open({
+            title: 'Confirm Delete',
+            message: 'Are you sure you want to delete this category?',
+            onok: () => {
+                document.forms[0].submit();
+            }
+        })
+    });
 </script>
