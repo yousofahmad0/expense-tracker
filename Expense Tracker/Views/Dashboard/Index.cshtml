@@ -50,7 +50,7 @@
             <ejs-accumulationchart id="doughnutchart" enableSmartLabels background="#1a222b">
                 <e-accumulation-series-collection>
                     <e-accumulation-series dataSource="@ViewBag.DCData"
-                        xName="categoryTitleWithIcon" yName="amount" innerRadius="50%" legendShape="Circle">
+                                           xName="categoryTitleWithIcon" yName="amount" innerRadius="50%" legendShape="Circle">
                         <e-accumulationseries-datalabel name="formattedAmount" visible></e-accumulationseries-datalabel>
                     </e-accumulation-series>
                 </e-accumulation-series-collection>
@@ -81,9 +81,9 @@
                 </e-chart-chartarea>
                 <e-series-collection>
                     <e-series dataSource="@ViewBag.SplineChartData" xName="day" yName="income" name="Income" width="3"
-                                                        type="@Syncfusion.EJ2.Charts.ChartSeriesType.Spline"></e-series>
+                              type="@Syncfusion.EJ2.Charts.ChartSeriesType.Spline"></e-series>
                     <e-series dataSource="@ViewBag.SplineChartData" xName="day" yName="expense" name="Expense" width="3"
-                                                        type="@Syncfusion.EJ2.Charts.ChartSeriesType.Spline"></e-series>
+                              type="@Syncfusion.EJ2.Charts.ChartSeriesType.Spline"></e-series>
                 </e-series-collection>
                 <e-chart-legendsettings position="Top" alignment="Far" toggleVisibility="false">
                     <e-legendsettings-textstyle color="#fff" size="1rem"></e-legendsettings-textstyle>
@@ -92,4 +92,25 @@
             </ejs-chart>
         </div>
     </div>
+</div>
+
+@*Recent Transaction and More*@
+<div class="row mb-5">
+    <div class="col-md-12">
+        <div class="widget">
+            <div class="p-4">
+                <h5 class="fw-bold">Recent Transactions</h5>
+            </div>
+            <div class="px-4 pb-4">
+                <ejs-grid id="recent-transactions" dataSource="@ViewBag.RecentTransactions" gridLines="None">
+                    <e-grid-columns>
+                        <e-grid-column headerText="Category" field="CategoryTitleWithIcon"></e-grid-column>
+                        <e-grid-column headerText="Date" field="Date" type="date" format="MMM-dd-yy"></e-grid-column>
+                        <e-grid-column headerText="Amount" field="FormattedAmount"></e-grid-column>
+                    </e-grid-columns>
+                </ejs-grid>
+            </div>
+        </div>
+    </div>
+
 </div>
